@@ -8,19 +8,41 @@ function renderLicenseBadge(license) {
       break;
     case "MIT License":
       badge="![License Badge](https://img.shields.io/badge/License-MIT-green)";
-      break;  
+      break; 
+    case "Apache License 2.0":
+      badge="![License Badge](https://img.shields.io/badge/License-Apache2.0-green)";
+      break;
+    case "Mozilla Public License 2.0":
+      badge="![License Badge](https://img.shields.io/badge/License-Mozilla2.0-green)";
+      break;     
   }
   return badge;
 };
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+  let licenseLink;
+  if(license === "None"){
+    licenseLink="";
+  }
+  else{
+    licenseLink= "[here](./LICENSE)"
+  };
+  return licenseLink;
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  
+  let licenseSection;
+  if(license === "None"){
+    licenseSection=""
+  }
+  else{
+    licenseSection= `This project is licensed under ${license} and can be found at ${renderLicenseLink(license)}`;
+  }
+  return licenseSection;
 }
 
 // TODO: Create a function to generate markdown for README
@@ -37,7 +59,7 @@ ${renderLicenseBadge(data.license)}
   * [License](#license) 
 * [Contributing](#contributing)
 * [Tests](#tests)
-* [Questions](Questions)
+* [Questions](#questions)
 
 ----
 
@@ -55,7 +77,7 @@ ${data.installation}
 ${data.usage}
 
   ### -License
-  ### ${data.license}
+  ### ${renderLicenseSection(data.license)}
 
 ----
 
@@ -70,7 +92,9 @@ ${data.tests}
 ----
 
 ## Questions
-${data.questions}
+For any other questions, feel free to contact me 
+*[Github:${data.username}](https://github.com/${data.username})
+*[Email:${data.email}](mailto:${data.email})
 `;
 }
 

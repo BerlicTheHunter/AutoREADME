@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer= require('inquirer');
 const generateMarkdown= require('./utils/generateMarkdown.js');
+const fs= require('fs');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -33,7 +34,7 @@ const questions = [
   {
     type:'input',
     message: 'Please provide contribution instructions',
-    name: 'title',
+    name: 'contributing',
   },
   {
     type:'input',
@@ -55,13 +56,18 @@ const questions = [
     message: 'Where is this project deployed, (please provide live address)',
     name: 'liveLink',
   },
+  { 
+    type:'input',
+    message: 'What would you like to name your README file? (do not include file extensions)',
+    name: 'fileName',
+  },
 ];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName,data) {
-  fs.writeFile(filename, data, (err) =>
-  err ? console.error(err) : console.log('File Successfully Writen!')
-}
+  fs.writeFile(fileName, data, (err) =>
+  err ? console.error(err) : console.log('File Successfully Writen!'));
+};
 
 // TODO: Create a function to initialize app
 function init() {
@@ -69,7 +75,9 @@ function init() {
   .prompt(questions)
   .then((answers) =>{
     console.log(answers);
-    console.log(generateMarkdown(answers))
+    const readMe=generateMarkdown(answers);
+    writeToFile(answers.fileName,readMe);
+    console.log("Thanks for using AUTOREADME; additional sections can now be added manually")
   })  
 };
 
