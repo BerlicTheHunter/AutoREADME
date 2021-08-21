@@ -92,9 +92,9 @@ ${data.tests}
 ----
 
 ## Questions
-For any other questions, feel free to contact me 
-*[Github:${data.username}](https://github.com/${data.username})
-*[Email:${data.email}](mailto:${data.email})
+For any other questions, please the the provided links below
+* [Github](https://github.com/${data.username})
+* [Email](mailto:${data.email})
 `;
 }
 

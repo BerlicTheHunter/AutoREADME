@@ -1,7 +1,7 @@
  
 # t
 
-![License Badge](https://img.shields.io/badge/License-Apache2.0-green)
+![License Badge](https://img.shields.io/badge/License-MIT-green)
 
 ## Table of Contents
 * [Description](#description)
@@ -28,12 +28,12 @@ t
 t
 
   ### -License
-  ### This project is licensed under Apache License 2.0 and can be found at [here](./LICENSE)
+  ### This project is licensed under MIT License and can be found at [here](./LICENSE)
 
 ----
 
 ## Contributing
-undefined
+t
 
 ----
 
@@ -43,4 +43,6 @@ t
 ----
 
 ## Questions
-undefined
+For any other questions, please the the provided links below
+* [Github](https://github.com/t)
+* [Email](mailto:t)

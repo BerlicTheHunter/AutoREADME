@@ -66,7 +66,7 @@ const questions = [
 // TODO: Create a function to write README file
 function writeToFile(fileName,data) {
   fs.writeFile(fileName, data, (err) =>
-  err ? console.error(err) : console.log('File Successfully Writen!'));
+  err ? console.error(err) : console.log('\n','File Successfully Writen!','\n','Thanks for using AUTOREADME','\n','additional sections can now be added manually'));
 };
 
 // TODO: Create a function to initialize app
@@ -74,10 +74,8 @@ function init() {
   inquirer
   .prompt(questions)
   .then((answers) =>{
-    console.log(answers);
     const readMe=generateMarkdown(answers);
-    writeToFile(answers.fileName,readMe);
-    console.log("Thanks for using AUTOREADME; additional sections can now be added manually")
+    writeToFile(answers.fileName+".md",readMe);
   })  
 };
 
