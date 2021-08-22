@@ -25,11 +25,19 @@ This project requires the installation of node. copy the files "index.js" and th
 ----
 
 ## Usage
-To use this command line tool. please first install inquirer by typing "npm intall" in the command line  to install the required node modules. This file project is dependent on node.js, inquirer.js and the provided generateMarkdown.js provided in the utils folder. 
+To use this command line tool, 
+* run "npm init" and answer the prompts 
+* run "npm install inquirer" 
+* run "npm install fs"  
+
+This file project is dependent on node.js, inquirer.js, fs.js and the provided generateMarkdown.js provided in the utils folder. 
 
 After the required install, simpley run "node index.js" in the command line and answer the following prompts.
 
+[Example Video](https://drive.google.com/file/d/1L4r9dPpBfsVGR3I3TMEmgqVWNiOdCNUU/view?usp=sharing)
+
 ![Example Prompts](./Screenshots/CMDPrompts.png)
+
 
 This README was generated using this project, with the exception of the added photos and video.
 
