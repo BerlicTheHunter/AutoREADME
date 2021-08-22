@@ -27,7 +27,7 @@ function renderLicenseLink(license) {
     licenseLink="";
   }
   else{
-    licenseLink= "[here](./LICENSE)"
+    licenseLink= "  * [License](#license)"
   };
   return licenseLink;
 }
@@ -40,7 +40,11 @@ function renderLicenseSection(license) {
     licenseSection=""
   }
   else{
-    licenseSection= `This project is licensed under ${license} and can be found at ${renderLicenseLink(license)}`;
+    licenseSection= 
+`
+## License
+This project is licensed under ${license} and can be found [here](./LICENSE)
+`;
   }
   return licenseSection;
 }
@@ -56,7 +60,7 @@ ${renderLicenseBadge(data.license)}
 * [Description](#description)
 * [Installation](#installation)
 * [Usage](#usage)
-  * [License](#license) 
+${renderLicenseLink(data.license)} 
 * [Contributing](#contributing)
 * [Tests](#tests)
 * [Questions](#questions)
@@ -76,8 +80,9 @@ ${data.installation}
 ## Usage
 ${data.usage}
 
-  ### -License
-  ### ${renderLicenseSection(data.license)}
+[Go To Live Project](${data.liveLink})
+
+${renderLicenseSection(data.license)}
 
 ----
 
